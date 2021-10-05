@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){new Swiper(".swiper-container",{effect:"fade",loop:!0,autoplay:{delay:3e3,disableOnInteraction:!0},speed:1500,pagination:{el:".swiper-pagination",clickable:!0},slidesPerView:1,followFinger:!1,draggable:!1,preventClicksPropagation:!1,preventClicks:!1,touchRatio:0});console.log("tset")});

@@ -1,0 +1,55 @@
+// @import "mixin";
+$primary : #1088c4;
+$secondary: #083d6c;
+$accent : #C30B0B;
+
+$info: #ffd332;
+$warning: #ffd332;
+$error: #ffd332;
+$success: #ffd332;
+
+$text_color : #222222;
+$gray_color : #656565;
+$marker: #fff;
+
+$max_width : 1920px;
+$min_width : 1200px;
+$con_width : 1100px;
+$con_width2 : 1050px;
+
+$jp_font: 'Noto Sans JP', 'Oswald', "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+$jp_font_only: 'Noto Sans JP', "Yu Gothic Medium", "游ゴシック体", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+
+$en_font: 'Oswald', sans-serif;
+
+$breakpoints: (
+  'xs2': 'screen and (max-width: 640px) and (orientation: portrait)',
+  'xs': 'screen and (max-width: 380px)',
+  's' : 'screen and (max-width: 680px) ,screen and (max-width: 737px) and (orientation: landscape)',
+  'm': 'screen and (max-width: 1024px)',
+  'm2': 'screen and (min-width: 1025px)',
+  'l' : 'screen and (max-width: 1280px)',
+  'xl': 'screen and (max-width: 1500px)',
+  'nav': 'screen and (max-width: 680px) ,screen and (max-width: 737px) and (orientation: landscape)'
+) !default;
+
+@mixin media-query($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+      @media #{map-get($breakpoints, $breakpoint)} {
+          @content;
+      }
+  } @else {
+      @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+      + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}
+
+// サンプル
+// .nav {
+//   display: inline-block;
+
+//   @include media-query('s') {
+//     display: block;
+//   }
+// }

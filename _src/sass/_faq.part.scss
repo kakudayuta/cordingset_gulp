@@ -1,0 +1,136 @@
+
+
+.faq__inner {
+  width: 92%;
+  max-width: $con_width;
+  margin: 59px auto 0;
+
+  @include media-query('s') {
+    padding: 0 5%;
+  }
+}
+
+.faq__title {
+  font-size: 25px;
+  font-weight: 700;
+
+  @include media-query('s') {
+    font-size: 21px;
+  }
+}
+
+
+.faq__description {
+  background-color: #F5F5F5;
+  padding: 26px 30px;
+  line-height: 2.1;
+  font-size: 15px;
+
+  a {
+    text-decoration: underline !important;
+    color: $primary !important;
+    transition: opacity .3s ease;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  @include media-query('s') {
+    font-size: 14px;
+  }
+}
+
+.acc__box + .faq__title {
+  margin-top: 50px;
+}
+
+
+.acc__box {
+  margin: 0 0;
+  padding: 0;
+  border-top: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.faq__title + .acc__box {
+  margin-top: 22px;
+
+  @include media-query('s') {
+    margin-top: 12px;
+  }
+}
+
+.acc__box + .acc__box {
+  border-top: none;
+}
+
+.acc__box label {
+  display: block;
+  margin: 1.5px 0;
+  padding : 25px 12px;
+  cursor :pointer;
+  transition: all 0.5s;
+  position: relative;
+
+  @include media-query('s') {
+    padding: 15px 33px 13px 5px;
+    font-size: 14px;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    right: 10px;
+    top: calc((100% - 1px) / 2);
+  }
+
+  &::after {
+    transform: rotate(90deg);
+    transition: transform .3s ease;
+  }
+}
+
+.acc__box input {
+  display: none;
+}
+
+.acc__box .acc__innerText {
+  height: 0;
+  padding: 0 5px;
+  overflow: hidden;
+  transition: 0.8s;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+}
+
+.acc__input:checked {
+  &+label {
+    &::after {
+      transform: rotate(180deg);
+    }
+
+    &+.acc__innerText {
+      height: auto;
+      padding: 5px 5px 16px;
+    }
+  }
+}
+
+.faq__linkBox {
+  margin-top: 60px;
+  display: flex;
+  justify-content: flex-end;
+
+  @include media-query('s') {
+    justify-content: flex-start;
+    margin-top: 60px;
+  }
+}

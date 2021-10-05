@@ -1,0 +1,14 @@
+.marker-animation.active{
+  background-position: -100% 0.9em;
+}
+
+.marker-animation {
+  background-image: linear-gradient(to right, transparent 50%, $marker 50%);
+  background-repeat: repeat-x;
+  background-size: 200% 0.45em;
+  background-position: 0 0.9em;
+  transition: background-position 1.3s ease-in;
+  transition-delay: 0s;
+  display: inline;
+  opacity: 1;
+}

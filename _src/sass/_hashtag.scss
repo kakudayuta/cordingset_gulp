@@ -1,0 +1,35 @@
+
+.hashTag__inner {
+  width: $con_width;
+  max-width: 92%;
+  margin: 50px auto 0;
+}
+
+.hashTag__list {
+  overflow: hidden;
+}
+
+.hashTag__listItem {
+  color: #68797C;
+  margin-top: 10px;
+  margin-right: 20px;
+  float: left;
+}
+
+.hashTag__listLink {
+  font-size: 14px;
+  font-style: italic;
+  padding: 6px 0;
+  color: #404040!important;
+  display: block;
+  transition: opacity .3s ease;
+  letter-spacing: 0em;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &::before {
+    content: '＃';
+  }
+}

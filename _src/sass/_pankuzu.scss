@@ -1,0 +1,71 @@
+@charset "utf-8";
+
+
+
+.pankuzu {
+  // position: absolute;
+  // left: 4%;
+  // bottom: 20px;
+
+
+  width: 92%;
+  max-width: $con_width;
+  margin: 0 auto;
+
+  z-index: 10;
+}
+
+.pankuzu__list {
+  display: flex;
+  font-size: 12px;
+
+  li {
+    color: #000;
+    line-height: 1;
+
+    a {
+      overflow: hidden;
+      display: inline-block;
+
+      @include media-query('s') {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        display: inline-block;
+        overflow: hidden;
+        max-width: 100px;
+        font-size: 10px;
+      }
+    }
+
+    &:not(:first-child) {
+      position: relative;
+      margin-left: 36px;
+      display: inline-block;
+
+      @include media-query('s') {
+        margin-left: 45px;
+      }
+
+      &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 7px;
+        left: -22px;
+        width: 4px;
+        height: 4px;
+        border: 0;
+        border-top: solid 1px #000;
+        border-right: solid 1px #000;
+        transform: rotate(45deg);
+
+        @include media-query('s') {
+          top: 6px;
+          left: -26px;
+          width: 3px;
+          height: 3px;
+        }
+      }
+    }
+  }
+}

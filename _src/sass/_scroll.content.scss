@@ -1,0 +1,100 @@
+
+.scroll__wrap {
+  position: absolute;
+  bottom: 20%;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 90px;
+  z-index: 50;
+
+  @include media-query('s') {
+    width: 2%;
+  }
+}
+
+.scroll__title {
+  color: #fff;
+  letter-spacing: 0.365em;
+  font-weight: 300;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  font-size: 11px;
+  padding: 5px 0 0 0;
+
+  @include media-query('s') {
+    display: none;
+  }
+}
+
+.scroll__text {
+  top: auto;
+  bottom: 140px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  height: 135px;
+}
+
+.scroll__text::before {
+  content: "";
+  width: 6px;
+  height: 150px;
+  border: 1px solid #fff;
+  display: block;
+  border-top: none;
+  border-right: none;
+  transform: skewY(-40deg);
+  position: relative;
+  z-index: 1;
+  left: -17px;
+  top: 0px;
+  animation-name: scroll;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+  animation-duration: 2.0s;
+}
+
+.scroll__text b {
+  margin-top: 17px;
+  position: absolute;
+  z-index: 1;
+  font-size: 12px;
+  color: #fff;
+  bottom: auto;
+  top: 3px;
+  right: -5px;
+  left: auto;
+  margin: 0;
+  font-family: $en_font;
+  font-weight: 600;
+  letter-spacing: 0.4em;
+  font-weight: normal;
+  writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode:vertical-rl;
+}
+
+@keyframes scroll {
+  0% {
+    height: 10px;
+    opacity: 0;
+  }
+
+  5% {
+    height: 10px;
+    opacity: 1;
+  }
+
+  80% {
+    height: 120px;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
